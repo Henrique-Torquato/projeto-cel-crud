@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projeto CEL – Animais Especiais</title>
+    <link href="assets/css/loader.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logocelfavcon.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logocelfavcon.jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logocelfavcon.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logocelfavcon.jpeg">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--    Stylesheets-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <style>
+    /* Estilo do botão de compra Sobrepor */
+    .comprar-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F1A501;; 
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: none; 
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .comprar-btn:hover {
+      background-color: #F1A501; 
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .comprar-btn img {
+      width: 16px;
+      height: 16px;
+      margin-right: 0.5rem;
+    }
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+      <div class="text-center">
+        <img src="assets/img/logocel.png" alt="Projeto CEL" width="150" class="mb-3" />
+        <div class="d-flex align-items-center justify-content-center">
+          <!---- Contêiner fixo para os pontos animados -->
+          <div class="dots-container">
+            <div class="dots"></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logocel.png" height="34" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#sobre">Ínicio</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#destination">Loja</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#booking">Adoções</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Doações</a></li>
+              <li class="nav-item px-3 px-xl-4">
+                <a class="nav-link fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+              </li>
+              <li class="nav-item px-3 px-xl-4">
+                <a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastre-se</a>
+              </li> 
+              <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PT</a>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#!">PT</a></li>
+                  <li><a class="dropdown-item" href="#!">EN</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section style="padding-top: 7rem;">
+        <div class="bg-holder" style="background-image:url(assets/img/hero/hero-bg.svg);">
+        </div>
+        <!--/.bg-holder-->
+
+        <!-- Modal de Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold text-secondary" id="loginModalLabel">Bem-vindo de volta!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="text-center mb-4">
+                    <img src="assets/img/logocel.png" alt="Projeto CEL" width="100">
+                    <p class="text-muted mt-2">Faça login para continuar</p>
+                </div>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+                        </div>
+                        <a href="#!" class="text-decoration-none text-secondary">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                </form>
+                <div class="text-center mt-4">
+                    <p class="mb-0">Não tem uma conta? <a href="cadastro.html" class="text-primary text-decoration-none">Cadastre-se</a></p>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal de Cadastro -->
+        <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="cadastroModalLabel">Cadastre-se</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="cadastroForm">
+                          <div class="mb-3">
+                              <label for="nome" class="form-label">Nome Completo</label>
+                              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="emailCadastro" class="form-label">E-mail</label>
+                              <input type="email" class="form-control" id="emailCadastro" placeholder="Digite seu e-mail" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="senhaCadastro" class="form-label">Senha</label>
+                              <input type="password" class="form-control" id="senhaCadastro" placeholder="Crie uma senha" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="telefone" class="form-label">Telefone</label>
+                              <input type="tel" class="form-control" id="telefone" placeholder="Digite seu telefone" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="endereco" class="form-label">Endereço</label>
+                              <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 hero-img" src="assets/img/hero/hero_animais.png" alt="hero-header" /></div>
+            <div class="col-md-7 col-lg-6 text-md-start text-center py-6">
+              <h4 class="fw-bold text-danger mb-3">Conectando animais especiais a lares responsáveis</h4>
+              <h1 class="hero-title">Uma iniciativa transformadora</h1>
+              <p class="mb-4 fw-medium">Ajude-nos a transformar vidas. Adote, doe ou apoie nossa causa.<br class="d-none d-xl-block" /><br class="d-none d-xl-block" /></p>
+              <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#booking" role="button">Adote Agora</a>
+                <div class="w-100 d-block d-md-none"></div><a href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span class="btn btn-danger round-btn-lg rounded-circle me-3 danger-btn-shadow"> <img src="assets/img/hero/play.svg" width="15" alt="paly"/></span></a><span class="fw-medium">Nossas Ações</span>
+                <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <div class="ratio ratio-16x9">
+                        <iframe 
+                          class="rounded" 
+                          src="https://www.youtube.com/embed/BHA-uVwzga0?si=E-Sj0q-3rm59iXLn" 
+                          title="YouTube video player" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-5 pt-md-9" id="service">
+
+        <div class="container">
+          <div class="position-absolute z-index--1 end-0 d-none d-lg-block"><img src="assets/img/category/shape.svg" style="max-width: 200px" alt="service" /></div>
+          <div class="mb-7 text-center">
+            <h5 class="text-secondary">CATEGORIAS</h5>
+            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Maneiras de Mudar uma Vida</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <a href="#booking" class="text-decoration-none">
+                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                  <div class="card-body p-xxl-5 p-4">
+                    <img src="assets/img/category/icon-adote.png" width="75" alt="Service" />
+                    <h4 class="mb-3">Adote</h4>
+                    <p class="mb-0 fw-medium">Adote um amigo e dê um lar super especial para ele.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <a href="#testimonial" class="text-decoration-none">
+                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                  <div class="card-body p-xxl-5 p-4">
+                    <img src="assets/img/category/icon-doacao.png" width="75" alt="Service" />
+                    <h4 class="mb-3">Faça uma Doação</h4>
+                    <p class="mb-0 fw-medium">Doe e nos ajude a manter esse projeto essêncial para salvar vidas.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <a href="#partnership" class="text-decoration-none">
+                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                  <div class="card-body p-xxl-5 p-4">
+                    <img src="assets/img/category/icon-parceiro.png" width="75" alt="Service" />
+                    <h4 class="mb-3">Seja um Parceiro</h4>
+                    <p class="mb-0 fw-medium">Escolha um plano de Parceiro, e faça a diferença.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <a href="#destination" class="text-decoration-none">
+                <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                  <div class="card-body p-xxl-5 p-4">
+                    <img src="assets/img/category/icon-loja.png" width="75" alt="Service" />
+                    <h4 class="mb-3">Nossa Loja</h4>
+                    <p class="mb-0 fw-medium">Compre um produto que mostra seu amor pelos animais.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div><!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+        <section class="pt-5" id="destination">
+          <div class="container">
+            <div class="position-absolute start-100 bottom-0 translate-middle-x d-none d-xl-block ms-xl-n4">
+              <img src="assets/img/dest/shape.svg" alt="destination" />
+            </div>
+            <div class="mb-7 text-center">
+              <h5 class="text-secondary">Top Produtos</h5>
+              <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Nossa Loja</h3>
+            </div>
+            <!-- Contêiner para produtos dinâmicos -->
+            <div class="row" id="produtos-container"></div>
+          </div><!-- end of .container-->
+        </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section id="booking">
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="mb-4 text-start">
+                <h5 class="text-secondary">Fácil e Rápido</h5>
+                <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Encontre aqui seu parceiro ideal</h3>
+              </div>
+              <div class="d-flex align-items-start mb-5">
+                <div class="bg-primary me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="assets/img/steps/selection.svg" width="22" alt="steps" /></div>
+                <div class="flex-1">
+                  <h5 class="text-secondary fw-bold fs-0">Descubra</h5>
+                  <p>Descubra o animalzinho perfeito para você. <br class="d-none d-sm-block"> Basta preencher o forms.</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-start mb-5">
+                <div class="bg-danger me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="assets/img/steps/water-sport.svg" width="22" alt="steps" /></div>
+                <div class="flex-1">
+                  <h5 class="text-secondary fw-bold fs-0">Não Tenha Mais Dúvidas</h5>
+                  <p>Tenha a certeza do bichinho que vai combinar com você<br class="d-none d-sm-block">combinar perfeitamente com você.</p>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-lg" onclick="window.location.href='adocao.html'">Descubra agora</button>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-start">
+              <div class="card position-relative shadow" style="max-width: 370px;">
+                <div class="position-absolute z-index--1 me-10 me-xxl-0" style="right:-160px;top:-210px;"> <img src="assets/img/steps/bg.png" style="max-width:550px;" alt="shape" /></div>
+                <div class="card-body p-3"> <img class="mb-4 mt-2 rounded-2 w-100" src="assets/img/steps/booking-img.png" alt="booking" />
+                  <div>
+                    <h5 class="fw-medium">Adote com Amor</h5>
+                    <p class="fs--1 mb-3 fw-medium">Transforme vidas ao adotar um animalzinho especial.</p>
+
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center mt-n1">
+                        <img class="me-3" src="assets/img/steps/building.svg" width="18" />
+                        <span class="fs--1 fw-medium">Milhares de adoções realizadas</span>
+                      </div>
+                    </div>
+                  </div>      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+        <section id="testimonial">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="mb-8 text-start">
+                  <h5 class="text-secondary">Doações</h5>
+                  <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Veja quem já ajudou e faça parte dessa causa</h3>
+                </div>
+              </div>
+              <div class="col-lg-1"></div>
+              <div class="col-lg-6">
+                <div class="pe-7 ps-5 ps-lg-0">
+                  <div class="carousel slide carousel-fade position-static" id="testimonialIndicator" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button class="active" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="0" aria-current="true" aria-label="Testimonial 0"></button>
+                      <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="1" aria-current="true" aria-label="Testimonial 1"></button>
+                      <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="2" aria-current="true" aria-label="Testimonial 2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item position-relative active">
+                        <div class="card shadow" style="border-radius:10px;">
+                          <div class="position-absolute start-0 top-0 translate-middle"> 
+                            <img class="rounded-circle fit-cover" src="assets/img/testimonial/author.png" height="65" width="65" alt="Autor 1" />
+                          </div>
+                          <div class="card-body p-4">
+                            <p class="fw-medium mb-4">&quot;Doei porque acredito na causa. É incrível ver o impacto positivo que podemos causar!&quot;</p>
+                            <h5 class="text-secondary">Stephan Silva</h5>
+                            <p class="fw-medium fs--1 mb-0">São Paulo, Brasil</p>
+                          </div>
+                        </div>
+                        <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100" style="border-radius:10px;transform:translate(25px, 25px)"> </div>
+                      </div>
+                      <div class="carousel-item position-relative">
+                        <div class="card shadow" style="border-radius:10px;">
+                          <div class="position-absolute start-0 top-0 translate-middle"> 
+                            <img class="rounded-circle fit-cover" src="assets/img/testimonial/author2.png" height="65" width="65" alt="Autor 2" />
+                          </div>
+                          <div class="card-body p-4">
+                            <p class="fw-medium mb-4">&quot;Ajudar esses cães especiais foi uma das melhores decisões que já tomei.&quot;</p>
+                            <h5 class="text-secondary">Carlos Mendes</h5>
+                            <p class="fw-medium fs--1 mb-0">Rio de Janeiro, Brasil</p>
+                          </div>
+                        </div>
+                        <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100" style="border-radius:10px;transform:translate(25px, 25px)"> </div>
+                      </div>
+                      <div class="carousel-item position-relative">
+                        <div class="card shadow" style="border-radius:10px;">
+                          <div class="position-absolute start-0 top-0 translate-middle"> 
+                            <img class="rounded-circle fit-cover" src="assets/img/testimonial/author3.png" height="65" width="65" alt="Autor 3" />
+                          </div>
+                          <div class="card-body p-4">
+                            <p class="fw-medium mb-4">&quot;Saber que minha doação ajudou a salvar vidas me enche de alegria.&quot;</p>
+                            <h5 class="text-secondary">Mariana Costa</h5>
+                            <p class="fw-medium fs--1 mb-0">Belo Horizonte, Brasil</p>
+                          </div>
+                        </div>
+                        <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100" style="border-radius:10px;transform:translate(25px, 25px)"> </div>
+                      </div>
+                    </div>
+                    <div class="carousel-navigation d-flex flex-column flex-between-center position-absolute end-0 top-lg-50 bottom-0 translate-middle-y z-index-1 me-3 me-lg-0" style="height:60px;width:20px;">
+                      <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="prev">
+                        <img src="assets/img/icons/up.svg" width="16" alt="Anterior" />
+                      </button>
+                      <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="next">
+                        <img src="assets/img/icons/down.svg" width="16" alt="Próximo" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5">
+              <button class="btn btn-primary btn-lg" onclick="window.location.href='doacao.html'">Faça sua Doação</button>
+            </div>
+          </div><!-- end of .container-->
+        
+        </section>
+
+
+        <!-- <section> begin ============================-->
+        <section class="pt-5 pb-6" id="partnership">
+          <div class="container">
+            <div class="mb-7 text-center">
+              <h5 class="text-secondary">ASSINE UM PLANO</h5>
+              <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Torne-se um Parceiro Recorrente</h3>
+              <p class="mx-auto mb-6" style="max-width: 600px;">Ajude-nos regularmente a manter nossas operações e salvar mais vidas.</p>
+            </div>
+            <div class="row gx-lg-4 gy-4">
+              
+              <!-- Plano Básico -->
+              <div class="col-md-4">
+                <div class="card h-100 border border-200 rounded-3">
+                  <div class="card-body text-center">
+                    <h4 class="text-secondary fw-bold fs-1 mb-3">Básico</h4>
+                    <h2 class="display-4 fw-bold mb-4">R$ 29<span class="fs--1 fw-medium text-secondary">/mês</span></h2>
+                    <ul class="list-unstyled mb-4">
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Alimentação para 1 animal</li>
+                      <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Newsletter mensal</li>
+                      <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Certificado digital</li>
+                      <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Desconto na loja</li>
+                      <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Eventos exclusivos</li>
+                    </ul>
+                    <button class="btn btn-outline-primary w-100">Assinar agora</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Plano Popular -->
+              <div class="col-md-4">
+                <div class="card h-100 border border-200 rounded-3 position-relative">
+                  <div class="position-absolute top-0 start-0 bg-danger text-white py-1 px-3 rounded-end" style="top:-15px;">
+                    Mais popular
+                  </div>
+                  <div class="card-body text-center">
+                    <h4 class="text-secondary fw-bold fs-1 mb-3">Padrão</h4>
+                    <h2 class="display-4 fw-bold mb-4">R$ 59<span class="fs--1 fw-medium text-secondary">/mês</span></h2>
+                    <ul class="list-unstyled mb-4">
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Alimentação para 3 animais</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Newsletter mensal</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certificado digital</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Desconto na loja</li>
+                      <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Eventos exclusivos</li>
+                    </ul>
+                    <button class="btn btn-primary w-100">Assinar agora</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Plano Premium -->
+              <div class="col-md-4">
+                <div class="card h-100 border border-200 rounded-3">
+                  <div class="card-body text-center">
+                    <h4 class="text-secondary fw-bold fs-1 mb-3">Premium</h4>
+                    <h2 class="display-4 fw-bold mb-4">R$ 99<span class="fs--1 fw-medium text-secondary">/mês</span></h2>
+                    <ul class="list-unstyled mb-4">
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Alimentação para 5 animais</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Newsletter exclusiva</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certificado impresso</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Desconto na loja</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Eventos exclusivos</li>
+                    </ul>
+                    <button class="btn btn-outline-primary w-100">Assinar agora</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div><!-- end of .container-->
+        </section>
+<!-- <section> close ============================-->
+<!-- <section> close ============================-->
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+ <!--     <div class="position-relative pt-9 pt-lg-8 pb-6 pb-lg-8">
+        <div class="container">
+          <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 flex-center">
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"> <img class="img-fluid" src="assets/img/partner/6.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"> <img class="img-fluid" src="assets/img/partner/2.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"> <img class="img-fluid" src="assets/img/partner/3.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"> <img class="img-fluid" src="assets/img/partner/4.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"> <img class="img-fluid" src="assets/img/partner/5.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-6">
+
+        <div class="container">
+          <div class="py-8 px-5 position-relative text-center" style="background-color: rgba(223, 215, 249, 0.199);border-radius: 129px 20px 20px 20px;">
+            <div class="position-absolute start-100 top-0 translate-middle ms-md-n3 ms-n4 mt-3"> 
+              <img src="assets/img/cta/send.png" style="max-width:70px;" alt="send icon" />
+            </div>
+            <div class="position-absolute end-0 top-0 z-index--1"> 
+              <img src="assets/img/cta/shape-bg2.png" width="264" alt="cta shape" />
+            </div>
+            <div class="position-absolute start-0 bottom-0 ms-3 z-index--1 d-none d-sm-block"> 
+              <img src="assets/img/cta/shape-bg1.png" style="max-width: 340px;" alt="cta shape" />
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-md-10">
+                <h2 class="text-secondary lh-1-7 mb-7">Inscreva-se para receber informações, novidades e ofertas sobre o Projeto CEL</h2>
+                <form class="row g-3 align-items-center w-lg-75 mx-auto">
+                  <div class="col-sm">
+                    <div class="input-group-icon">
+                      <input class="form-control form-little-squirrel-control" type="email" placeholder="Digite seu e-mail" aria-label="email" />
+                      <img class="input-box-icon" src="assets/img/cta/mail.svg" width="17" alt="mail" />
+                    </div>
+                  </div>
+                  <div class="col-sm-auto">
+                    <button class="btn btn-danger orange-gradient-btn fs--1">Inscrever-se</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div><!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+        <section class="pb-0 pb-lg-4">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+                <img class="mb-4" src="assets/img/logocel.png" width="150" alt="Projeto CEL" />
+                <p class="fs--1 text-secondary mb-0 fw-medium">Transforme vidas ao apoiar o Projeto CEL. Juntos, podemos fazer a diferença para cães especiais.</p>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Sobre Nós</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Nossa História</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Equipe</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Missão</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contato</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Ajuda/FAQ</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Fale Conosco</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Parcerias</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Recursos</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Blog</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Eventos</a></li>
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Galeria</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
+                <div class="icon-group mb-4">
+                  <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a>
+                  <a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a>
+                  <a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a>
+                </div>
+                <h4 class="fw-medium font-sans-serif text-secondary mb-3">Baixe nosso aplicativo</h4>
+                <div class="d-flex align-items-center">
+                  <a href="#!"><img class="me-2" src="assets/img/play-store.png" alt="Google Play" /></a>
+                  <a href="#!"><img src="assets/img/apple-store.png" alt="App Store" /></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- end of .container-->
+        
+        </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <div class="py-5 text-center">
+        <p class="mb-0 text-secondary fs--1 fw-medium">Todos Direitos Reservados contato@projetocel.com.br </p>
+      </div>
+
+      <!-- Modal de Confirmação de Compra -->
+      <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="checkoutModalLabel">Confirme sua Compra</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Detalhes do Produto -->
+              <div class="mb-3">
+                <h6>Produto:</h6>
+                <p id="produto-nome"></p>
+                <p><strong>Preço:</strong> R$ <span id="produto-preco"></span></p>
+              </div>
+
+              <!-- Dados do Usuário -->
+              <div class="mb-3">
+                <h6>Dados do Comprador:</h6>
+                <p><strong>Nome:</strong> <span id="usuario-nome"></span></p>
+                <p><strong>Endereço:</strong> <span id="usuario-endereco"></span></p>
+              </div>
+
+              <!-- Endereço de Entrega -->
+              <div class="mb-3">
+                <h6>Endereço de Entrega:</h6>
+                <p id="endereco-entrega"></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="confirmar-compra">Confirmar Compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">  
+  </body>
+
+</html>

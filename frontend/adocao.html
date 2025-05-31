@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Projeto CEL – Cães Especiais Lar</title>
+        <link href="assets/css/loader.css" rel="stylesheet" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logocelfavcon.jpeg">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logocelfavcon.jpeg">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logocelfavcon.jpeg">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/logocelfavcon.jpeg">
+        <link rel="manifest" href="assets/img/favicons/manifest.json">
+        <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+        <meta name="theme-color" content="#ffffff">
+        <!--    Stylesheets-->
+        <link href="assets/css/theme.css" rel="stylesheet" />
+        <style>
+          .adotar-btn {
+            display: inline-flex;
+            align-items: center; 
+            justify-content: center; 
+            background-color: #F1A501; /* Azul primário */
+            color: #ffffff; /* Cor do texto branca */
+            font-size: 0.875rem; /* Tamanho da fonte */
+            font-weight: bold; /* Texto em negrito */
+            padding: 0.5rem 1rem; /* Espaçamento interno */
+            border-radius: 25px; /* Bordas arredondadas */
+            border: none; /* Remove a borda */
+            text-decoration: none; /* Remove sublinhado */
+            transition: all 0.3s ease; /* Transição suave para hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            width: 100%; /* Largura total do contêiner pai */
+            height: 40px; /* Altura fixa para o botão */
+            gap: 0.5rem; /* Espaçamento entre o ícone e o texto */
+          }
+
+          /* Efeito hover no botão */
+          .adotar-btn:hover {
+            background-color: #F1A501; /* Azul escuro */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+            transform: translateY(-2px); /* Efeito de "levantamento" */
+          }
+
+          /* Estilo para o ícone dentro do botão */
+          .adotar-btn img {
+            width: 16px; /* Largura fixa para o ícone */
+            height: 16px; /* Altura fixa para o ícone */
+            margin-right: 0.5rem; /* Espaçamento entre o ícone e o texto */
+            object-fit: contain; /* Garante que o ícone mantenha suas proporções */
+          }
+        </style>
+
+    </head>
+<body>
+      <!-- Loader -->
+      <div id="loader-wrapper">
+        <div class="text-center">
+          <img src="assets/img/logocel.png" alt="Projeto CEL" width="150" class="mb-3" />
+          <div class="d-flex align-items-center justify-content-center">
+            <!---- Contêiner fixo para os pontos animados -->
+            <div class="dots-container">
+              <div class="dots"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+    <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logocel.png" height="34" alt="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+      <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
+          <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="index.html">Início</a></li>
+          <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#destination">Loja</a></li>
+          <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#booking">Adoções</a></li>
+          <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Doações</a></li>
+          <li class="nav-item px-3 px-xl-4">
+            <a class="nav-link fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item px-3 px-xl-4">
+            <a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastre-se</a>
+          </li> 
+          <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PT</a>
+            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#!">PT</a></li>
+              <li><a class="dropdown-item" href="#!">EN</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Modal de Confirmação de Adoção -->
+  <div class="modal fade" id="adocaoModal" tabindex="-1" aria-labelledby="adocaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adocaoModalLabel">Confirme sua Adoção</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Detalhes do Animal -->
+          <div class="mb-3">
+            <h6>Animal:</h6>
+            <p><strong>Nome:</strong> <span id="animal-nome"></span></p>
+            <p><strong>Raça:</strong> <span id="animal-raca"></span></p>
+            <p><strong>Deficiência:</strong> <span id="animal-deficiencia"></span></p>
+            <p><strong>Cuidados Especiais:</strong> <span id="animal-cuidados"></span></p>
+          </div>
+
+          <!-- Dados do Usuário -->
+          <div class="mb-3">
+            <h6>Dados do Adotante:</h6>
+            <p><strong>Nome:</strong> <span id="usuario-nome"></span></p>
+            <p><strong>Endereço:</strong> <span id="usuario-endereco"></span></p>
+          </div>
+
+          <!-- Endereço de Entrega -->
+          <div class="mb-3">
+            <h6>Endereço de Entrega:</h6>
+            <p id="endereco-entrega"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="confirmar-adocao">Confirmar Adoção</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Seção de Adoção -->
+  <section style="padding-top: 7rem; margin-top: 5rem;" class="pt-5" id="destination">
+    <div class="container">
+      <div class="position-absolute start-100 bottom-0 translate-middle-x d-none d-xl-block ms-xl-n4">
+        <img src="assets/img/dest/shape.svg" alt="destination" />
+      </div>
+      <div class="mb-7 text-center">
+        <h5 class="text-secondary">Animais Para Adoção</h5>
+        <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Adote Agora</h3>
+      </div>
+      <!-- Contêiner para produtos dinâmicos -->
+      <div class="row" id="animais-container"></div>
+    </div><!-- end of .container-->
+  </section>
+
+  <!-- Footer -->
+  <section class="pb-0 pb-lg-4">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+          <img class="mb-4" src="assets/img/logocel.png" width="150" alt="Projeto CEL" />
+          <p class="fs--1 text-secondary mb-0 fw-medium">Transforme vidas ao apoiar o Projeto CEL. Juntos, podemos fazer a diferença para cães especiais.</p>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+          <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Sobre Nós</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Nossa História</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Equipe</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Missão</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+          <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contato</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Ajuda/FAQ</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Fale Conosco</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Parcerias</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
+          <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Recursos</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Blog</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Eventos</a></li>
+            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Galeria</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
+          <div class="icon-group mb-4">
+            <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a>
+            <a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a>
+            <a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a>
+          </div>
+          <h4 class="fw-medium font-sans-serif text-secondary mb-3">Baixe nosso aplicativo</h4>
+          <div class="d-flex align-items-center">
+            <a href="#!"><img class="me-2" src="assets/img/play-store.png" alt="Google Play" /></a>
+            <a href="#!"><img src="assets/img/apple-store.png" alt="App Store" /></a>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  
+  </section>
+
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/adocao.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+    <script>
+
+
+
+    </script>
+
+</html>
